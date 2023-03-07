@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Alexander Southall</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/style.css') }}" >
+
+</head>
+<body>
+
+<div id="name"><h1>Alexander Southall</h1></div>
+<div id="contacts" style = "border:auto; margin:auto;"><img style="vertical-align:middle; " src="static/images/phone.png" width="5%"alt="phone">
+    <p1 style="margin-right:20px"> +44 7982144870 </p1><a href = "mailto: alexlsouthall@yahoo.com">
+        <img style="vertical-align:middle; margin:10px" src="static/images/email.png" width="5%"alt="email"></a>
+    <p1 >alexlsouthall@yahoo.com</p1>
+    <a href = "https://teams.microsoft.com/l/chat/0/0?users=alexlsouthall@yahoo.com">
+        <img style="vertical-align:middle; margin:10px; border:5px;" src="static/images/MicrosoftTeams.png" width="7%"alt="teams"></a>
+    <p1 style=>Teams Link</p1>
+</div>
+
+
+<div class="intro">
+    <div class="Profile" >
+        <img src="static/images/thumbnail.png" width="40%"alt="Profile" style=" display: block; margin-left: auto;
+  margin-right: auto;">
+    </div>
+    <div class="Profile" style="display:inline-block; width:20px; margin:auto; text-align:left; vertical-align:bottom; border: auto">
+        <p style="font-size:20px; ">
+
+        Hi, I'm Alexander Southall I am a 2021 Graduate from the University of Greenwich in Games Design & Development,
+                     After graduating I have spent some time considering my path for the future, though I focused on visual design aspect of
+                     Games during University, I believe I have more strengths and passion in programming.
+                     Here you will find some Python projects I've implemented to develop my skills.
+                     My aim is to look at a range of topics within my interests of visual design and language learning
+                     as well as experimental applications to find the discipline of coding that suits me,
+                      please take a look and I would love to hear some feedback, thanks!</p>
+
+    </div>
+
+
+</div>
+
+<div class ="project_columns">
+    <div class="column">
+        {% for dict_item in data[:index] %}
+            <img style="display:inline-block; width:80px; border:auto; border-style:solid; border-color:#151718;" src="static/{{dict_item['Image']}}" width="5%"alt="email">
+            <h1 style="display:inline-block; margin-right:1px ;margin-left:10px; width:300px;">{{dict_item["Header"]}}</h1>
+
+            <p style="margin-left:10px; width=350px;">{{dict_item["Description"]}}</p>
+            <a style="margin-left:10px;" href="{{dict_item['Url']}}">Github Link</a>
+        <p> </p>
+
+        {% endfor %}
+    </div>
+    <div class="column" >
+     {% for dict_item in data[index:] %}
+            <img style="display:inline-block; width:80px; border:auto; border-style:solid; border-color:#151718;" src="static/{{dict_item['Image']}}" width="5%"alt="email">
+            <h1 style="display:inline-block; margin-right:1px ;margin-left:10px; width:300px;">{{dict_item["Header"]}}</h1>
+
+            <p style="margin-left:10px; width=350px;">{{dict_item["Description"]}}</p>
+            <a style="margin-left:10px;" href="{{dict_item['Url']}}">Github Link</a>
+            <p> </p>
+
+        {% endfor %}
+     </div>
+</div>
+</body>
+</html>
+

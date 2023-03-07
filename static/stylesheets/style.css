@@ -1,0 +1,24 @@
+.intro{
+
+    margin: 50px;
+    border: 100px;
+
+}
+
+html {
+       background-color: #dce5e7;
+       font-family: "Roboto Slab" ;
+        margin: 100px;
+    border: 200px;
+}
+#name{display:inline-block; margin-right:50px;margin-left:50px; width:400px;}
+#contacts{display:inline-block; width:800px; font-size:20px}
+
+phone{vertical-align:middle;}
+
+.project_columns{display:flex;}
+.column{flex: 50%;}
+
+.intro{display:flex;}
+.Profile{Flex:70%; width:300px; display: block; margin-left: auto;
+  margin-right: auto;}
